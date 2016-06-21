@@ -15,7 +15,7 @@ A BitPoints.Club account API Key - this can be obtained by registering for a fre
 
 Installation
 ===
-Download the site and edit \bitPoints.php with your BitPoints.Club account API Key as below
+Download the site and edit \bitPoints.php, set $bitPoints_APIKey to your BitPoints.Club account API Key and $bitPoints_ProgramId to your program id (see below)
 
 ```
 $bitPoints_APIKey = ""; //Enter your api key here, to get an api key register for a free demo account on https://bitpoints.club
