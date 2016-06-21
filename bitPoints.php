@@ -2,17 +2,7 @@
 /* Do not allow public access to this key */
 $bitPoints_APIKey = ""; //Enter your api key here, to get an api key register for a free demo account on https://bitpoints.club
 $bitPoints_URL = "https://bitpoints.club/api/v1/";
-$bitPoints_ProgramId = ; /*set to your program id, to find your program id do a get request to program/List i.e see bitPoints_GetProgram() below:
-    
-function bitPoints_GetProgramId() {
-    //Find a program_id (i.e. the first program), we suggest using a variable for this instead but you can use this code to find what the program_id is
-    $objects = bitPoints_HTTP('GET', 'program/List', '');
-    if(count($objects) == 0) 
-        throw new Exception('No programs setup');
-    else 
-        return bitPoints_RefreshCustomer($objects[0]->program_id);
-}
-*/
+$bitPoints_ProgramId = 0; //set to your program id, to find your program_id(s): browse to \showProgram_id.php after setting $bitPoints_APIKey
 
 function bitPoints_AddCustomer($email, $password) {
     //check email doesn't already exist in the db
@@ -97,6 +87,18 @@ function bitPoints_Refund($customer_id, $amount) {
 function bitPoints_History($customer_id) {
     //return customer history
     return bitPoints_HTTP('GET', 'program/'.$GLOBALS['bitPoints_ProgramId'].'/customer/'.$customer_id.'/transaction/List', '');
+}
+
+function bitPoints_EchoProgramId() {
+    //Find a program_id (i.e. the first program), we suggest using a variable for this instead but you can use this code to find what the program_id is
+    $objects = bitPoints_HTTP('GET', 'program/List', '');
+    if(count($objects) == 0) 
+        echo 'No programs setup';
+    else {
+        foreach ($objects as $object) {
+            echo $object->program_name." program_id = ".$object->program_id;
+        }
+    }
 }
 
 function bitPoints_HTTP($method, $url, $postData) {

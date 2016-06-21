@@ -20,15 +20,5 @@ Download the site and edit \bitPoints.php, set $bitPoints_APIKey to your BitPoin
 ```
 $bitPoints_APIKey = ""; //Enter your api key here, to get an api key register for a free demo account on https://bitpoints.club
 $bitPoints_URL = "https://bitpoints.club/api/v1/";
-$bitPoints_ProgramId = ; /*set to your program id, to find your program id do a GET request to https://bitpoints.club/api/v1/program/List i.e see bitPoints_GetProgram() below:
-
-function bitPoints_GetProgramId() {
-    //Find a program_id (i.e. the first program), we suggest using a variable for this instead but you can use this code to find what the program_id is
-    $objects = bitPoints_HTTP('GET', 'program/List', '');
-    if(count($objects) == 0) 
-        throw new Exception('No programs setup');
-    else 
-        return bitPoints_RefreshCustomer($objects[0]->program_id);
-}
-*/
+$bitPoints_ProgramId = 0; //set to your program id, to find your program_id(s): browse to \showProgram_id.php after setting $bitPoints_APIKey
 ```
