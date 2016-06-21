@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Checkout | E-Shopper</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+<header id="header"><!--header-->
+	<div class="header_top"><!--header_top-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="contactinfo">
+						<ul class="nav nav-pills">
+							<li><a href=""><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
+							<li><a href=""><i class="fa fa-envelope"></i> info@domain.com</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="social-icons pull-right">
+						<ul class="nav navbar-nav">
+							<li><a href=""><i class="fa fa-facebook"></i></a></li>
+							<li><a href=""><i class="fa fa-twitter"></i></a></li>
+							<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+							<li><a href=""><i class="fa fa-dribbble"></i></a></li>
+							<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/header_top-->
+		
+	<div class="header-middle"><!--header-middle-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="logo pull-left">
+						<a href="home.html"><img src="images/home/logo.png" alt="" /></a>
+					</div>
+					<div class="btn-group pull-right">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+								USA
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="">Canada</a></li>
+								<li><a href="">UK</a></li>
+							</ul>
+						</div>
+							
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+								DOLLAR
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="">Canadian Dollar</a></li>
+								<li><a href="">Pound</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="shop-menu pull-right">
+						<ul class="nav navbar-nav auth-menu">
+						    <li>Loading...</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/header-middle-->
+	
+	<div class="header-bottom"><!--header-bottom-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="mainmenu pull-left">
+						<ul class="nav navbar-nav collapse navbar-collapse">
+							<li><a href="home.html">Home</a></li>
+							<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="shop.html">Products</a></li>
+									<li><a href="product-details.html">Product Details</a></li> 
+									<li><a href="checkout.html" class="active">Checkout</a></li> 
+									<li><a href="cart.html">Cart</a></li> 
+									<li><a href="login.html">Login</a></li> 
+                                </ul>
+                            </li> 
+							<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="blog.html">Blog List</a></li>
+									<li><a href="blog-single.html">Blog Single</a></li>
+                                </ul>
+                            </li> 
+							<li><a href="contact-us.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="search_box pull-right">
+						<input type="text" placeholder="Search"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/header-bottom-->
+</header><!--/header-->
+
+<section id="cart_items">
+	<div class="container">
+		<div class="breadcrumbs">
+			<ol class="breadcrumb">
+				<li><a href="home.html">Home</a></li>
+				<li class="active">Check out</li>
+			</ol>
+		</div><!--/breadcrums-->
+
+		<form id="orderForm">
+		    <div id="auth-checkout">
+		        <div class="step-one">
+		            <h2 class="heading">Step1</h2>
+		        </div>
+		        <div class="checkout-options">
+				    <div class="row">
+					    <div class="col-sm-5 clearfix">
+		                    <h3>New User</h3>
+		                    <p>Checkout options</p>
+				            <div >
+					            <div class="shopper-info">
+						            <p>Shopper Information</p>
+							        <input type="text" name="name" placeholder="Display Name">
+							        <input type="text" name="uac" placeholder="User Name">
+							        <input type="password" name="password" placeholder="Password">
+							        <input type="password" placeholder="Confirm password">
+					            </div>
+				            </div>
+		                    <ul class="nav">
+		                        <li>
+		                            <label><input type="radio" name="rdoAccount"> Register Account</label>
+		                        </li>
+		                        <li>
+		                            <label><input type="radio" name="rdoAccount"> Guest Checkout</label>
+		                        </li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div><!--/checkout-options-->
+
+		        <div class="register-req">
+		            <p>Please use Register And Checkout to easily get access to your order history, or use Checkout as Guest</p>
+		        </div><!--/register-req-->
+		        <div class="step-one">
+		            <h2 class="heading">Step2</h2>
+		        </div>
+		    </div>
+
+		    <div class="shopper-informations">
+		        <div class="row">
+		            <div class="col-sm-5 clearfix">
+		                <div class="bill-to">
+		                    <p>Bill To</p>
+		                    <div class="form-one">
+		                        <input type="text" name="coname" placeholder="Company Name">
+		                        <input type="text" name="email" placeholder="Email*">
+		                        <input type="text" name="title" placeholder="Title">
+		                        <input type="text" name="fname" placeholder="First Name *">
+		                        <input type="text" name="mname" placeholder="Middle Name">
+		                        <input type="text" name="lname" placeholder="Last Name *">
+		                        <input type="text" name="addr1" placeholder="Address 1 *">
+		                        <input type="text" name="addr2" placeholder="Address 2">
+		                    </div>
+		                    <div class="form-two">
+		                        <input type="text" name="pcode" placeholder="Zip / Postal Code *">
+		                        <select name="country">
+		                            <option>-- Country --</option>
+		                            <option>United States</option>
+		                            <option>New Zealand</option>
+		                            <option>UK</option>
+		                            <option>Australia</option>
+		                            <option>Pakistan</option>
+		                            <option>Ucrane</option>
+		                            <option>Canada</option>
+		                            <option>Dubai</option>
+		                        </select>
+		                        <select name="region">
+		                            <option>-- State / Province / Region --</option>
+		                            <option>United States</option>
+		                            <option>New Zealand</option>
+		                            <option>UK</option>
+		                            <option>Australia</option>
+		                            <option>Pakistan</option>
+		                            <option>Ucrane</option>
+		                            <option>Canada</option>
+		                            <option>Dubai</option>
+		                        </select>
+		                        <input type="password" placeholder="Confirm password">
+		                        <input type="text" placeholder="Phone *">
+		                        <input type="text" placeholder="Mobile Phone">
+		                        <input type="text" placeholder="Fax">
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-sm-4">
+		                <div class="order-message">
+		                    <p>Shipping Order</p>
+		                    <textarea name="message" name="notes" placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
+		                    <label><input type="checkbox"> Shipping to bill address</label>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+
+			<div class="review-payment">
+				<h2>Review & Payment</h2>
+			</div>
+
+		    <div class="table-responsive cart_info">
+		        <table class="table table-condensed">
+		            <thead>
+		            <tr class="cart_menu">
+		                <td class="image">Item</td>
+		                <td class="description"></td>
+		                <td class="price">Price</td>
+		                <td class="quantity">Quantity</td>
+		                <td class="total">Total</td>
+		                <td></td>
+		            </tr>
+		            </thead>
+		            <tbody>
+		            <tr>
+		                <td class="cart_product">
+		                    <a href=""><img src="images/cart/one.png" alt=""></a>
+		                </td>
+		                <td class="cart_description">
+		                    <h4><a href="">Colorblock Scuba</a></h4>
+		                    <p>Web ID: 1089772</p>
+		                </td>
+		                <td class="cart_price">
+		                    <p>$159</p>
+		                </td>
+		                <td class="cart_quantity">
+		                    <div class="cart_quantity_button">
+		                        <a class="cart_quantity_up" href=""> + </a>
+		                        <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+		                        <a class="cart_quantity_down" href=""> - </a>
+		                    </div>
+		                </td>
+		                <td class="cart_total">
+		                    <p class="cart_total_price">$159</p>
+		                </td>
+		                <td class="cart_delete">
+		                    <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+		                </td>
+		            </tr>
+
+		            <tr>
+		                <td class="cart_product">
+		                    <a href=""><img src="images/cart/two.png" alt=""></a>
+		                </td>
+		                <td class="cart_description">
+		                    <h4><a href="">Colorblock Scuba</a></h4>
+		                    <p>Web ID: 1089772</p>
+		                </td>
+		                <td class="cart_price">
+		                    <p>$159</p>
+		                </td>
+		                <td class="cart_quantity">
+		                    <div class="cart_quantity_button">
+		                        <a class="cart_quantity_up" href=""> + </a>
+		                        <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+		                        <a class="cart_quantity_down" href=""> - </a>
+		                    </div>
+		                </td>
+		                <td class="cart_total">
+		                    <p class="cart_total_price">$159</p>
+		                </td>
+		                <td class="cart_delete">
+		                    <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td class="cart_product">
+		                    <a href=""><img src="images/cart/three.png" alt=""></a>
+		                </td>
+		                <td class="cart_description">
+		                    <h4><a href="">Colorblock Scuba</a></h4>
+		                    <p>Web ID: 1089772</p>
+		                </td>
+		                <td class="cart_price">
+		                    <p>$159</p>
+		                </td>
+		                <td class="cart_quantity">
+		                    <div class="cart_quantity_button">
+		                        <a class="cart_quantity_up" href=""> + </a>
+		                        <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+		                        <a class="cart_quantity_down" href=""> - </a>
+		                    </div>
+		                </td>
+		                <td class="cart_total">
+		                    <p class="cart_total_price">$159</p>
+		                </td>
+		                <td class="cart_delete">
+		                    <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td colspan="4">&nbsp;</td>
+		                <td colspan="2">
+		                    <table class="table table-condensed total-result">
+		                        <tr>
+		                            <td>Cart Sub Total</td>
+		                            <td>$477</td>
+		                        </tr>
+		                        <tr>
+		                            <td id="usePointsLabel"></td>
+		                            <td id="usePointsAmount"></td>
+		                        </tr>
+		                        <tr class="shipping-cost">
+		                            <td>Shipping Cost</td>
+		                            <td>Free</td>
+		                        </tr>
+		                        <tr>
+		                            <td>Total</td>
+		                            <td id="lblTotal"><span>$477</span></td>
+		                        </tr>
+		                    </table>
+		                    <a class="btn btn-default check_out" href="javascript:$('#mPaymentDetails').modal('show');">Continue</a>
+		                </td>
+		            </tr>
+		            </tbody>
+		        </table>
+		    </div>
+
+		    <input type="hidden" name="cmd" value="order" />
+        </form>
+	</div>
+</section> <!--/#cart_items-->
+
+	    
+<div class="modal fade" id="mPaymentDetails" tabindex="-1" role="dialog" aria-labelledby="mPaymentDetails1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="btnCancel2" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="H2">Payment</h4>
+            </div>
+            <div class="modal-body">
+                <div class="mian-popup-body">
+                    <div>
+                        <div class="col-sm-12">
+        
+                            <div class="panel panel-sub credit-card-box">
+                                <div class="panel-heading display-table" >
+                                    <div class="row display-tr" >
+                                        <h3 class="panel-title display-td">Payment Details</h3>
+                                        <div class="display-td" >                            
+                                            <img class="img-responsive pull-right" src="images/cart/accepted_c22e0.png">
+                                        </div>
+                                    </div>                    
+                                </div>
+                                <div class="panel-body">
+                                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <div class="inline-block">
+                                                        <label class="cardText"><b>Amouunt</b></label>
+                                                    </div>
+                                                    <div class="inline-block">
+                                                        <label class="cardText" id="paymentAmount">$477</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="cardNumber">Card Number</label>
+                                                    <div class="input-group">
+                                                        <input 
+                                                            type="tel"
+                                                            name="cardNumber"
+                                                            class="form-control"
+                                                            placeholder="Valid Card Number"
+                                                            autocomplete="cc-number"
+                                                            required autofocus 
+                                                            value=""
+                                                        />
+                                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                                    </div>
+                                                </div>                            
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-7">
+                                                <div class="form-group">
+                                                    <label for="cardExpiry"><span class="visible-xs-inline">EXP</span> DATE</label>
+                                                    <input 
+                                                        type="tel" 
+                                                        class="form-control" 
+                                                        name="cardExpiry"
+                                                        placeholder="MM / YY"
+                                                        autocomplete="cc-exp"
+                                                        required 
+                                                        value=""
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 pull-right">
+                                                <div class="form-group">
+                                                    <label for="cardCVC">CV Code</label>
+                                                    <input 
+                                                        type="tel" 
+                                                        class="form-control"
+                                                        name="cardCVC"
+                                                        placeholder="CVC"
+                                                        autocomplete="cc-csc"
+                                                        required
+                                                        value=""
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 pull-right">
+                                                <button type="button" id="btnCancel" class="btn btn-info " data-dismiss="modal">Cancel</button>
+                                                <button type="button" id="btnPay" class="btn btn-primary" data-dismiss="modal">Make Payment</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>            
+                        
+                        </div> 
+                        <div>&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	<footer id="footer"><!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="companyinfo">
+							<h2><span>e</span>-shopper</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe1.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe2.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe3.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe4.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Online Help</a></li>
+								<li><a href="">Contact Us</a></li>
+								<li><a href="">Order Status</a></li>
+								<li><a href="">Change Location</a></li>
+								<li><a href="">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Quock Shop</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">T-Shirt</a></li>
+								<li><a href="">Mens</a></li>
+								<li><a href="">Womens</a></li>
+								<li><a href="">Gift Cards</a></li>
+								<li><a href="">Shoes</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Policies</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Terms of Use</a></li>
+								<li><a href="">Privecy Policy</a></li>
+								<li><a href="">Refund Policy</a></li>
+								<li><a href="">Billing System</a></li>
+								<li><a href="">Ticket System</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Company Information</a></li>
+								<li><a href="">Careers</a></li>
+								<li><a href="">Store Location</a></li>
+								<li><a href="">Affillate Program</a></li>
+								<li><a href="">Copyright</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Your email address" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+    <div class="modal fade" id="mMessage" tabindex="-1" role="dialog" aria-labelledby="mMessage" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="mMessageTitle"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="mian-popup-body">
+                        <div class="row">
+                            <div class="form-group" id="mMessageBody"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info back-btn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.payment.min.js"></script>
+    <script src="js/ccard.js"></script>
+    <script>
+        /* Check points balance again before completing the order (if points used) */
+        function processPayment() {
+            $('#btnPay').html("Processing...");
+            $('#btnPay').prop('disabled', true);
+            $('#btnCancel').prop('disabled', true);
+            $('#btnCancel2').prop('disabled', true);
+
+            if (top.pointsUsed() > 0) {
+                //update/check points balance
+                top.serverPost("cmd=refresh")
+                    .then(function (newAuth) {
+                        if (newAuth && newAuth.points_value < top.pointsUsed()) {
+                            top.setAuth(newAuth);
+                            top.setMenu();
+                            handleError("Unexpected points balance change, are you logged into another session?");
+                        } else
+                            takePointsPayment();
+                    }, function (err) {
+                        handleError("Unexpected error posting order: " + err);
+                    });
+            } else
+                takeCardPayment();
+        }
+
+        /* Use points */
+        function takePointsPayment() {
+            //use points
+            top.serverPost("cmd=redeem&amount=" + top.pointsUsed())
+                .then(function (newAuth) {
+                    top.setAuth(newAuth);
+                    top.setMenu();
+                    takeCardPayment();
+                }, function (err) {
+                    handleError("Unexpected error posting order: " + err);
+                });
+        }
+
+        /* Make card payment, if this fails (i.e. declined etc) refund points */
+        function takeCardPayment() {
+            try {
+                //your card payment logic
+
+                //post order
+                top.serverPost($("#orderForm").serialize() + "&amount=" + ((top.pointsUsed() > 0) ? 477 - top.pointsUsed() : 477))
+                    .then(function (newAuth) {
+                        top.setAuth(newAuth);
+                        top.setMenu();
+
+                        //redirect to complete page
+                        document.location.href = "complete.html";
+                    }, function (err) {
+                        handleError("Unexpected error posting order: " + err);
+                    });
+
+            } catch (error) {
+
+                if (top.pointsUsed() > 0) {
+                    //refund points
+                    top.serverPost("cmd=refund&amount=" + top.pointsUsed())
+                        .then(function (newAuth) {
+                            top.setAuth(newAuth);
+                            top.setMenu();
+                            handleError("Card payment failed: " + error.message);
+                        }, function (err) {
+                            handleError("Card payment failed: " + error.message + " Unexpected error refunding points: " + err);
+                        });
+                } else 
+                    handleError("Card payment failed: " + error.message);
+            }
+        }
+
+        function AlertDialog(title, message) {
+            $("#mMessageTitle").html(title);
+            $("#mMessageBody").html(message);
+            $("#mMessage").modal('show');
+        }
+
+        function handleError(errorMessage) {
+            if (errorMessage) AlertDialog("Checkout", "<p>" + errorMessage + "</p>");
+            $('#btnPay').html("Make Payment");
+            $('#btnPay').prop('disabled', false);
+            $('#btnCancel').prop('disabled', false);
+            $('#btnCancel2').prop('disabled', false);
+        }
+
+    </script>
+    <script>
+        var $form = $('#payment-form');
+        $(document).ready(function () {
+            $('#btnPay').on('click', function (e) {
+                e.preventDefault();
+                if (validator.form())
+                    processPayment();
+                return false;
+            });
+
+            if (top.getAuth() && top.getAuth().email.length > 0) {
+                $("[name=email]").val(top.getAuth().email);
+                if (top.pointsUsed() > 0) {
+                    $("#usePointsLabel").html("<b>Points</b>");
+                    $("#usePointsAmount").html("<b>$" + top.pointsUsed() + "</b>");
+                    $("#lblTotal").html("<span>$" + (477 - top.pointsUsed()) + "</span>");
+                    $("#paymentAmount").html("$" + (477 - top.pointsUsed()));
+                }
+            } else
+                $("#auth-checkout").show();
+
+            $('#btnCancel').on('click', function (e) { document.location.href = "home.html"; });
+            $('#btnCancel2').on('click', function (e) { document.location.href = "home.html"; });
+
+            $('input[name=cardNumber]').payment('formatCardNumber');
+            $('input[name=cardCVC]').payment('formatCardCVC');
+            $('input[name=cardExpiry').payment('formatCardExpiry');
+
+            jQuery.validator.addMethod("cardNumber", function (value, element) { return this.optional(element) || Stripe.card.validateCardNumber(value); }, "Please specify a valid credit card number.");
+            jQuery.validator.addMethod("cardExpiry", function (value, element) { value = $.payment.cardExpiryVal(value); return this.optional(element) || Stripe.card.validateExpiry(value.month, value.year); }, "Invalid expiration date.");
+            jQuery.validator.addMethod("cardCVC", function (value, element) { return this.optional(element) || Stripe.card.validateCVC(value); }, "Invalid CVC.");
+            jQuery.validator.addMethod("txtAutomate", function (value, element) { return $('input[type=radio]')[0].checked || $('input[type=radio]')[1].checked; }, "Invalid CVC.");
+            validator = $form.validate({
+                rules: {
+                    cardNumber: {
+                        required: true,
+                        cardNumber: true
+                    },
+                    cardExpiry: {
+                        required: true,
+                        cardExpiry: true
+                    },
+                    cardCVC: {
+                        required: true,
+                        cardCVC: true
+                    }
+                },
+                highlight: function (element) {
+                    $(element).closest('.form-control').removeClass('success').addClass('error');
+                },
+                unhighlight: function (element) {
+                    $(element).closest('.form-control').removeClass('error').addClass('success');
+                },
+                errorPlacement: function (error, element) {
+                    $(element).closest('.form-group').append(error);
+                }
+            });
+            paymentFormReady = function () {
+                if ($form.find('[name=cardNumber]').hasClass("success") &&
+                    $form.find('[name=cardExpiry]').hasClass("success") &&
+                    $form.find('[name=cardCVC]').val().length > 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            $('#btnPay').prop('disabled', true);
+            var readyInterval = setInterval(function () {
+                if (paymentFormReady()) {
+                    $('#btnPay').prop('disabled', false);
+                    clearInterval(readyInterval);
+                }
+            }, 250);
+        });
+    </script>
+</body>
+</html>

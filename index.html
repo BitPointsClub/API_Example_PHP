@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home | E-Shopper</title>
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+    <iframe src="home.html" class="content"></iframe>
+    <script src="js/jquery.js"></script>
+    <script>
+        var authUser,
+            iframe,
+            iframeLoaded = false,
+            pointsValue = 0;
+
+        function getAuth() {
+            return authUser;
+        }
+
+        function setAuth(value) {
+            authUser = value;
+            setMenu();
+        }
+
+        function usePoints(value) {
+            pointsValue = value;
+        }
+
+        function pointsUsed() {
+            return pointsValue;
+        }
+
+        function setMenu() {
+            if (iframeLoaded) {
+                var menu = iframe.contents().find('.auth-menu');
+                if (getAuth() && getAuth().email.length > 0)
+                    menu.html('<ul class="nav navbar-nav">' +
+                        '<li><a href="account.html"><i class="fa fa-user"></i> Account</a></li>' +
+                        '<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>' +
+                        '<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>' +
+                        '<li><a href="javascript:top.logoff();"><i class="fa fa-lock"></i> Logoff</a></li>' +
+                        '<li><a href="account.html"><b>You have ' + getAuth().points_balance + ' Points</b></a></li>' +
+                        '</ul>');
+                else
+                    menu.html('<ul class="nav navbar-nav">' +
+                        '<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>' +
+                        '<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>' +
+                        '</ul>');
+            } else
+                window.setTimeout(setMenu, 250);
+        }
+
+        function logoff() {
+            authUser = null;
+            setMenu();
+            serverPost("cmd=logoff");
+        }
+
+        function serverPost(postData) {
+            var promise = new Promise(function(resolve, reject) {
+                $.ajax({
+                    type: "POST",
+                    url: "ajax.php",
+                    data: postData,
+                    success: function (result) {
+                        if (result.type == 'success')
+                            resolve(jQuery.parseJSON(result.message));
+                        else 
+                            reject(result.message);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(XMLHttpRequest);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                        reject(errorThrown);
+                    }
+                });
+            });
+            return promise;
+        }
+
+        $(document).ready(function () {
+            authUser = serverPost("cmd=getCustomer")
+                .then(function (newAuth) {
+                    authUser = newAuth;
+                    setMenu();
+                });
+            
+            iframe = $('iframe'); 
+            iframe.load(function() {
+                iframeLoaded = true;
+                setMenu();
+            });
+        });
+    </script>
+</body>
+</html>
