@@ -2,7 +2,7 @@
 /* Do not allow public access to this key */
 $bitPoints_APIKey = ""; //Enter your api key here, to get an api key register for a free demo account on https://bitpoints.club
 $bitPoints_URL = "https://bitpoints.club/api/v1/";
-$bitPoints_ProgramId = 0; //set to your program id, to find your program_id(s): browse to \showProgram_id.php after setting $bitPoints_APIKey
+$bitPoints_ProgramId = 0; //set to your program id, to find your program_id(s): browse to /showProgram_id.php after setting $bitPoints_APIKey
 
 function bitPoints_AddCustomer($email, $password) {
     //check email doesn't already exist in the db
@@ -95,9 +95,11 @@ function bitPoints_EchoProgramId() {
     if(count($objects) == 0) 
         echo 'No programs setup';
     else {
+        echo "<table><tr><td><b>Program</b></td><td><b>program_id</b></td></tr>";
         foreach ($objects as $object) {
-            echo $object->program_name." program_id = ".$object->program_id;
+            echo "<tr><td>".$object->program_name."</td><td>".$object->program_id."</td></tr>";
         }
+        echo "</table>";
     }
 }
 
