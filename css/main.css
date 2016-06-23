@@ -1619,11 +1619,11 @@ h2.title {
 }
 
 
-#history_items .history_info .history_type h4 {
+#history_items .history_info .history_type .history_description,  h4 {
   margin-bottom: 0
 }
 
-#history_items .history_info .history_type h4 a {
+#history_items .history_info .history_type .history_description h4 a {
   color: #363432;
   font-family: 'Roboto',sans-serif;
   font-size: 20px;
@@ -1631,7 +1631,7 @@ h2.title {
 
 }
 
-#history_items .history_info .history_type p {
+#history_items .history_info .history_type .history_description p {
   color:#696763
 }
 
