@@ -54,32 +54,35 @@ function bitPoints_RefreshCustomer($customer_id) {
     return bitPoints_HTTP('GET', 'customer/'.$customer_id.'/program/'.$GLOBALS['bitPoints_ProgramId'].'/', '');
 }
 
-function bitPoints_Earn($customer_id, $amount) {
+function bitPoints_Earn($customer_id, $amount, $description) {
     //add earn transaction (and assign it to program_id)
     bitPoints_HTTP('POST', 'program/'.$GLOBALS['bitPoints_ProgramId'].'/customer/'.$customer_id.'/transaction', 
       '[{'.               
         '"transaction_type":"Earn",'.
-        '"amount":"'.$amount
+        '"amount":"'.$amount.'",'.
+        '"description":"'.$description
     .'"}]');
     return bitPoints_RefreshCustomer($customer_id);
 }
 
-function bitPoints_Redeem($customer_id, $amount) {
+function bitPoints_Redeem($customer_id, $amount, $description) {
     //add redeem transaction (and assign it to program_id)
     bitPoints_HTTP('POST', 'program/'.$GLOBALS['bitPoints_ProgramId'].'/customer/'.$customer_id.'/transaction', 
       '[{'.            
         '"transaction_type":"Redeem",'.
-        '"amount":"'.$amount
+        '"amount":"'.$amount.'",'.
+        '"description":"'.$description
     .'"}]');
     return bitPoints_RefreshCustomer($customer_id);
 }
 
-function bitPoints_Refund($customer_id, $amount) {
+function bitPoints_Refund($customer_id, $amount, $description) {
     //add refund transaction (and assign it to program_id)
     bitPoints_HTTP('POST', 'program/'.$GLOBALS['bitPoints_ProgramId'].'/customer/'.$customer_id.'/transaction', 
       '[{'.
         '"transaction_type":"Refund",'.
-        '"amount":"'.$amount
+        '"amount":"'.$amount.'",'.
+        '"description":"'.$description
     .'"}]');
     return bitPoints_RefreshCustomer($customer_id);
 }

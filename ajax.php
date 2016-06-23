@@ -75,19 +75,19 @@ function order() {
     //your order store / process logic
 
     //post bitpoints earn transaction
-    $object = bitPoints_Earn((int)$_SESSION['customer_id'], $_POST['amount']);
+    $object = bitPoints_Earn((int)$_SESSION['customer_id'], $_POST['amount'], "Order #1434453");
     updateCustomer($object);
 }
 
 function redeem() {
     //post bitpoints redeem transaction
-    $object = bitPoints_Redeem((int)$_SESSION['customer_id'], $_POST['amount']);
+    $object = bitPoints_Redeem((int)$_SESSION['customer_id'], $_POST['amount'], "Redemption for order #1434453");
     updateCustomer($object);
 }
 
 function refund() {
     //post bitpoints refund transaction
-    $object = bitPoints_Refund((int)$_SESSION['customer_id'], $_POST['amount']);
+    $object = bitPoints_Refund((int)$_SESSION['customer_id'], $_POST['amount'], "Redemption refund for order #1434453");
     updateCustomer($object);
 }
 
